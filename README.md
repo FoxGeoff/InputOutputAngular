@@ -5,3 +5,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Introduction
 
 1. Example app using Angular Material Forms with @Input() and @Output() directives
+
+### Task: Build an html form tmplate
