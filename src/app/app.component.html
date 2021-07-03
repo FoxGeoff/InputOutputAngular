@@ -6,28 +6,30 @@
     <input type="text" />
     <label>Server Comments</label>
     <input type="text" />
-    <div class="row" fxLayoutGap="10px">
+    <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
       <button mat-raised-button color="accent">Server</button>
       <button mat-raised-button color="primary">Blue Print</button>
     </div>
-    <hr />
   </div>
   <div fxLayout="row" fxLayoutGap="10px">
-    <div>
-      <p>Server</p>
-      <ul>
-        <li>Geoffs Server</li>
-        <li>This is test comment</li>
-      </ul>
-    </div>
+    <mat-list>
+      <div mat-subheader>Servers</div>
+      <mat-list-item *ngFor="let server of servers">
+        <mat-icon mat-list-icon>server</mat-icon>
+        <div mat-line>{{ server.name }}</div>
+        <div mat-line>{{ server.comment }}</div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
 
-    <div>
-      <p>Blue Print</p>
-      <ul>
-        <li>Geoffs Server</li>
-        <li>This is test comment</li>
-      </ul>
-    </div>
+    <mat-list>
+      <div mat-subheader>Blue Print</div>
+      <mat-list-item *ngFor="let server of servers">
+        <mat-icon mat-list-icon>server</mat-icon>
+        <div mat-line>{{ server.name }}</div>
+        <div mat-line>{{ server.comment }}</div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
   </div>
-  <hr />
 </div>
