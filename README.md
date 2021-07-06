@@ -22,3 +22,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 3. Restart server
 
 ### Task: Add two components Dashboad and ServerElement
+
+1. Fex layout ref: <https://www.angularjswiki.com/flexlayout/fxflex/>

@@ -1,19 +1,24 @@
-<div class="container">
+<div class="container"  style="margin:10px">
   <h4>Angular Material Form</h4>
 
-  <div>
-    <label>Server Name</label>
-    <input type="text" />
-    <label>Server Comments</label>
-    <input type="text" />
-    <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
-      <button mat-raised-button color="accent">Server</button>
-      <button mat-raised-button color="primary">Blue Print</button>
-    </div>
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start">
+    <mat-form-field appearance="standard">
+      <mat-label>Server Name</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Server Comments</mat-label>
+      <input matInput />
+    </mat-form-field>
   </div>
+  <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
+    <button mat-raised-button color="accent">Server</button>
+    <button mat-raised-button color="primary">Blue Print</button>
+  </div>
+
   <div fxLayout="row" fxLayoutGap="10px">
     <mat-list>
-      <div mat-subheader>Servers</div>
+      <div mat-subheader>Server  </div>
       <mat-list-item *ngFor="let server of servers">
         <mat-icon mat-list-icon>server</mat-icon>
         <div mat-line>{{ server.name }}</div>
