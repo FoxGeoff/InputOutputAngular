@@ -24,4 +24,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Task: Add two components Dashboad and ServerElement
 
 1. Fex layout ref: <https://www.angularjswiki.com/flexlayout/fxflex/>
-2. Use @Input() for passing down a custom property from dashboard to severElement Component
+2. Use @Input() for passing down a custom property from dashboard to severElement Component.
