@@ -26,3 +26,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Fex layout ref: <https://www.angularjswiki.com/flexlayout/fxflex/>
 2. Use @Input() for passing down a custom property from dashboard to severElement Component.
 3. Use @Output() for passing up an event Button (click) ='f(x)'
+4. Split into multi components
