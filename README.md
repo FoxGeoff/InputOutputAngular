@@ -30,7 +30,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Tasks: Get one page form working before split
 
-### Checks
+### Checks - One component
 
 1. app.module has 'FormsModule' ```import { FormsModule } from '@angular/forms';```
 2. Add to the form, [(ngModel)] = "propName"
