@@ -29,3 +29,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. Split into multi components
 
 ### Tasks: Get one page form working before split
+
+### Checks
+
+1. app.module has 'FormsModule' ```import { FormsModule } from '@angular/forms';```
+2. Add to the form, [(ngModel)] = "propName"

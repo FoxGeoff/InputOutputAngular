@@ -1,27 +1,31 @@
-<div class="container"  style="margin:10px">
+<div class="container" style="margin: 10px">
   <h4>Angular Material Form</h4>
 
   <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start">
     <mat-form-field appearance="standard">
       <mat-label>Server Name</mat-label>
-      <input matInput />
+      <input matInput [(ngModel)]="newName" />
     </mat-form-field>
     <mat-form-field appearance="standard">
       <mat-label>Server Comments</mat-label>
-      <input matInput />
+      <input matInput [(ngModel)]="newComment" />
     </mat-form-field>
   </div>
   <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
-    <button mat-raised-button color="accent">Server</button>
-    <button mat-raised-button color="primary">Blue Print</button>
+    <button mat-raised-button color="accent" (click)="onAddServer()">
+      Server
+    </button>
+    <button mat-raised-button color="primary" (click)="onAddBluePrint()">
+      Blue Print
+    </button>
   </div>
 
   <div fxLayout="row" fxLayoutGap="10px">
     <mat-list>
-      <div mat-subheader>Server  </div>
+      <div mat-subheader>Server</div>
       <mat-list-item *ngFor="let server of servers">
         <mat-icon mat-list-icon>server</mat-icon>
-        <div mat-line>{{ server.name }}</div>
+        <div mat-line style="color: '#7b50c7'">{{ server.name }}</div>
         <div mat-line>{{ server.comment }}</div>
       </mat-list-item>
       <mat-divider></mat-divider>
@@ -29,9 +33,9 @@
 
     <mat-list>
       <div mat-subheader>Blue Print</div>
-      <mat-list-item *ngFor="let server of servers">
+      <mat-list-item *ngFor="let server of bluePrints">
         <mat-icon mat-list-icon>server</mat-icon>
-        <div mat-line>{{ server.name }}</div>
+        <div mat-line style="color: 'blue'">{{ server.name }}</div>
         <div mat-line>{{ server.comment }}</div>
       </mat-list-item>
       <mat-divider></mat-divider>
