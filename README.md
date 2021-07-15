@@ -39,4 +39,86 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Add Dashboard Component ```@Input('srvElement') element: { name: string, content: string };```
 
-2. Add to App Component ```
+2. Add to App Component ```<app-dashboard></app-dashboard>```
+3. Add to App Component ```<app-server-list></app-server-list>```
+4. Add to App Component:
+
+````typeScript
+  <app-dashboard
+    (serverCreated)="onServerAdded($event)"
+    (bluePrintCreated)="onServerBlueprintAdded($event)"
+  ></app-dashboard>
+  ...
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-list
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+      ></app-server-list>
+    </div>
+  ````
+
+```typeScript
+// Based on the original button click() methods
+// Rename methods
+
+onServerAdded() { }
+
+onServerBlueprintAdded() { }
+```
+
+### Notes: Original methods
+
+1. The Parent method onAddServer() is moved to the Parent (app.component) and renamed onServerAdded() (button click event in the parent)
+2. The Parent method onAddServer() is moved to the Parent (app.component) and renamed onSerBlueprintAdded() (button click event in the event)
+
+```TypeScript
+// In the Parent now new Parent methods (app.component)
+  onServerAdded() {
+  //   this.servers.push({
+  //     name: this.newName,
+  //     content: this.newContent
+  //   });
+  //   this.newName = "";
+  //   this.newContent ="";
+  }
+
+  onServerBlueprintAdded() {
+  //   this.bluePrints.push({
+  //     name: this.newName,
+  //     content: this.newContent
+  //   });
+  //   this.newName = "";
+  //   this.newContent ="";
+  }
+  ```
+
+  1. New methods
+
+  ```TypeScript
+  export class AppComponent {
+  title = 'input-output';
+
+  // now lets use for the collection an example javascript literal
+  serverElements = [
+    { name: 'Testserver', content: 'test text' }
+  ];
+
+  // method #1 for events raised by button click() on child
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  // method #2 for events raised by button click() on child
+  onServerBluePrintAdded(bluePrintData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    });
+  }
+
+}
+```

@@ -1,1 +1,23 @@
-<p>server-list works!</p>
+<p>element-list works!</p>
+
+<div fxLayout="row" fxLayoutGap="10px">
+  <mat-list>
+    <div mat-subheader>element</div>
+    <mat-list-item *ngIf="element.type==='Server'">
+      <mat-icon mat-list-icon>element</mat-icon>
+      <div mat-line style="color: '#7b50c7'">{{ element.name }}</div>
+      <div mat-line>{{ element.content }}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+  <mat-list>
+    <div mat-subheader>Blue Print</div>
+    <mat-list-item *ngIf="element.type==='BluePrintServer'">
+      <mat-icon mat-list-icon>element</mat-icon>
+      <div mat-line style="color: 'blue'">{{ element.name }}</div>
+      <div mat-line>{{ element.content }}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>

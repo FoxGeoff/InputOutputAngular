@@ -1,12 +1,12 @@
 export class ServerElement {
   type!: string;
   name!: string;
-  comment!: string;
+  content!: string;
 
-  constructor(type: string, name: string, comment: string) {
+  constructor(type: string, name: string, content: string) {
     this.type = type;
     this.name = name;
-    this.comment = comment;
+    this.content = content;
   }
 
 }
@@ -20,31 +20,27 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'InputOutputAngular';
-  servers!: ServerElement[];
-  bluePrints!: ServerElement[];
+  serverElements!: ServerElement[];
+  bluePrintElements!: ServerElement[];
 
-  newName = '';
-  newComment = '';
+  constructor() { }
 
-  constructor() {
-    this.servers = [
-      new ServerElement("Server", "Dev Server", "This is a test comment"),
-      new ServerElement("Server", "Dev Server", "This is a test comment"),
-      new ServerElement("Server", "Dev Server", "This is a test comment")
-    ]
-      this.bluePrints = [
-        new ServerElement("BluePrint", "Dev Server", "This is a test comment"),
-        new ServerElement("BluePrint", "Dev Server", "This is a test comment"),
-        new ServerElement("BluePrint", "Dev Server", "This is a test comment")
-    ]
+  // method #1 for events raised by button click() on child
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      type: 'Server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
   }
 
-  onAddServer() {
-    this.servers.push(new ServerElement( "Server", this.newName, this.newComment))
-  }
-
-  onAddBluePrint() {
-    this.bluePrints.push(new ServerElement( "BluePrint", this.newName, this.newComment))
+  // method #2 for events raised by button click() on child
+  onServerBlueprintAdded(bluePrintData: { serverName: string, serverContent: string }) {
+    this.bluePrintElements.push({
+      type: 'BluePrintServer',
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    });
   }
 
 }

@@ -1,45 +1,13 @@
 <div class="container" style="margin: 10px">
   <!-- dashboard component -->
-  <h4>Angular Material Form</h4>
+  <app-dashboard
+    (srvCreated)="onServerAdded($event)"
+    (pbCreated)="onServerBlueprintAdded($event)"
+  ></app-dashboard>
 
-  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start">
-    <mat-form-field appearance="standard">
-      <mat-label>Server Name</mat-label>
-      <input matInput [(ngModel)]="newName" />
-    </mat-form-field>
-    <mat-form-field appearance="standard">
-      <mat-label>Server Comments</mat-label>
-      <input matInput [(ngModel)]="newComment" />
-    </mat-form-field>
-  </div>
-  <div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
-    <button mat-raised-button color="accent" (click)="onAddServer()">
-      Server
-    </button>
-    <button mat-raised-button color="primary" (click)="onAddBluePrint()">
-      Blue Print
-    </button>
-  </div>
-  <!-- server (list) component -->
-  <div fxLayout="row" fxLayoutGap="10px">
-    <mat-list>
-      <div mat-subheader>Server</div>
-      <mat-list-item *ngFor="let server of servers">
-        <mat-icon mat-list-icon>server</mat-icon>
-        <div mat-line style="color: '#7b50c7'">{{ server.name }}</div>
-        <div mat-line>{{ server.comment }}</div>
-      </mat-list-item>
-      <mat-divider></mat-divider>
-    </mat-list>
-
-    <mat-list>
-      <div mat-subheader>Blue Print</div>
-      <mat-list-item *ngFor="let server of bluePrints">
-        <mat-icon mat-list-icon>server</mat-icon>
-        <div mat-line style="color: 'blue'">{{ server.name }}</div>
-        <div mat-line>{{ server.comment }}</div>
-      </mat-list-item>
-      <mat-divider></mat-divider>
-    </mat-list>
-  </div>
+  <!-- server-list component -->
+  <app-server-list
+    *ngFor="let serverElement of serverElements"
+    [srvElement]="serverElement"
+  ></app-server-list>
 </div>

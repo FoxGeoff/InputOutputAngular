@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-server-list',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server-list.component.css']
 })
 export class ServerListComponent implements OnInit {
+
+  @Input('srvElement') element!: { type: string, name: string; content: string; };
+
+  //servers!: { type: string; name: string; comment: string; };
+  //bluePrints!: { type: string; name: string; comment: string; };
 
   constructor() { }
 

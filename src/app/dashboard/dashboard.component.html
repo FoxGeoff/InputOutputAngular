@@ -1,1 +1,22 @@
 <p>dashboard works!</p>
+
+<h4>Angular Material Form</h4>
+
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start">
+  <mat-form-field appearance="standard">
+    <mat-label>Server Name</mat-label>
+    <input matInput [(ngModel)]="newServerName" />
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>Server Comments</mat-label>
+    <input matInput [(ngModel)]="newServerComment" />
+  </mat-form-field>
+</div>
+<div class="row" fxLayoutGap="10px" fxLayoutAlign="start">
+  <button mat-raised-button color="accent" (click)="onAddServer()">
+    Server
+  </button>
+  <button mat-raised-button color="primary" (click)="onAddBluePrint()">
+    Blue Print
+  </button>
+</div>
