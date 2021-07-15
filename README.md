@@ -21,7 +21,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. run ```npm i -s @angular/flex-layout @angular/cdk```
 3. Restart server
 
-### Task: Add two components Dashboad and ServerElement
+### Task: Add two components Dashboad and ServerList
 
 1. Fex layout ref: <https://www.angularjswiki.com/flexlayout/fxflex/>
 2. Use @Input() for passing down a custom property from dashboard to severElement Component.
@@ -34,3 +34,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. app.module has 'FormsModule' ```import { FormsModule } from '@angular/forms';```
 2. Add to the form, [(ngModel)] = "propName"
+
+### Checks - Dashboard Component (contains dashboard and server-list)
+
+1. Add Dashboard Component ```@Input('srvElement') element: { name: string, content: string };```
+
+2. Add to App Component ```
