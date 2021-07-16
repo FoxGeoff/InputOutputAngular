@@ -15,6 +15,7 @@ export class ServerListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
 }
