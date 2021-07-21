@@ -21,13 +21,13 @@ export class DashboardComponent implements OnInit {
   // Task the original method onAddServer() on button click
   onAddServer() {
     //this.serverElements.push(new ServerElement('Server', this.newServerName, this.newServerContent));
-    this.serverCreated.emit({ serverName: this.newServerName, serverContent: this.newServerComment })
+    this.serverCreated.emit({ serverName: this.newServerName, serverContent: this.newServerComment });
   }
 
   // Task the original method onAddBluePrint() on button click
   onAddBluePrint() {
     //this.serverElements.push(new ServerElement('Blue Server', this.newServerName, this.newServerContent));
-    this.bluePrintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerComment })
+    this.bluePrintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerComment });
   }
 
 }
